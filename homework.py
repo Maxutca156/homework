@@ -3,7 +3,7 @@ from pyfiglet import Figlet
 import folium
 
 
-def get_into_by_ip(ip='127.0.0.1'):
+def get_info_by_ip(ip='127.0.0.1'):
     try:
         response = requests.get(url=f'http://ip-api.com/json/{ip}').json()
         print(response)
@@ -34,7 +34,7 @@ def get_into_by_ip(ip='127.0.0.1'):
         print(preview_text.renderText('IP INFO'))
         ip = input('Please enter a target IP: ')
 
-        get_into_by_ip(ip=ip)
+        get_info_by_ip(ip=ip)
 
     if __name__ == '__main__':
         main()
