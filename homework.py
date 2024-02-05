@@ -1,5 +1,6 @@
 import requests
 
+
 def get_into_by_ip(ip='127.0.0.1'):
     try:
         response = requests.get(url=f'http://ip-api.com/json/{ip}').json()
@@ -10,17 +11,23 @@ def get_into_by_ip(ip='127.0.0.1'):
             '[Int prov]': response.get('isp'),
             '[Org]': response.get('org'),
             '[Country]': response.get('query'),
+            '[Region Name]': response.get('regionName'),
+            '[City]': response.get('city'),
+            '[ZIP]': response.get('zip'),
+            '[lat]': response.get('lat'),
+            '[Lon]': response.get('lon'),
         }
+
+        for k, v in data.items():
+            print(f'{k} : {v}')
 
     except requests.exceptions.ConnectionError:
         print('[!] Please check your connection!')
-
 
     def main():
         ip = input('Please enter a target IP: ')
 
         get_into_by_ip(ip=ip)
 
-
-    if name == 'main':
-
+    if __name__ == '__main__':
+        main()
