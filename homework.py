@@ -1,4 +1,5 @@
 import requests
+from pyfiglet import Figlet
 
 
 def get_into_by_ip(ip='127.0.0.1'):
@@ -25,6 +26,8 @@ def get_into_by_ip(ip='127.0.0.1'):
         print('[!] Please check your connection!')
 
     def main():
+        preview_text = Figlet(font='slant')
+        print(preview_text.renderText)
         ip = input('Please enter a target IP: ')
 
         get_into_by_ip(ip=ip)
