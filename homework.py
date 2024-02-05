@@ -15,3 +15,12 @@ def get_into_by_ip(ip='127.0.0.1'):
     except requests.exceptions.ConnectionError:
         print('[!] Please check your connection!')
 
+
+    def main():
+        ip = input('Please enter a target IP: ')
+
+        get_into_by_ip(ip=ip)
+
+
+    if name == 'main':
+
