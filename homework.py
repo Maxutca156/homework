@@ -29,12 +29,14 @@ def get_info_by_ip(ip='127.0.0.1'):
     except requests.exceptions.ConnectionError:
         print('[!] Please check your connection!')
 
-    def main():
-        preview_text = Figlet(font='slant')
-        print(preview_text.renderText('IP INFO'))
-        ip = input('Please enter a target IP: ')
 
-        get_info_by_ip(ip=ip)
+def main():
+    preview_text = Figlet(font='slant')
+    print(preview_text.renderText('IP INFO'))
+    ip = input('Please enter a target IP: ')
 
-    if __name__ == '__main__':
-        main()
+    get_info_by_ip(ip=ip)
+
+
+if __name__ == '__main__':
+    main()
